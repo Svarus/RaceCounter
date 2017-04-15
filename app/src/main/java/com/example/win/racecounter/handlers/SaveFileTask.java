@@ -35,7 +35,7 @@ public class SaveFileTask extends AsyncTask<Object, Integer, Void> {
         this.isResults = isResults;
 
         try {
-            Thread.sleep(2000);   //used to simulate long time loading
+            //Thread.sleep(2000);   //used to simulate long time loading
             FilesHandler.saveJsonFile(fileNameSave, arrayOfRacers, isResults);
         } catch (Exception e) {
             e.printStackTrace();
