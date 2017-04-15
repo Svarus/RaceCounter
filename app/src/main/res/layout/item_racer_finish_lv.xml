@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tlFinishTable"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*" >
+
+    <!--<TableRow
+        android:id="@+id/trFinishLine">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="T# 23" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ddswewgfwegwe wegwegwe" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="laps" />
+    </TableRow>
+    <TableRow
+        android:id="@+id/trFinishLine2">
+
+        <TextView
+            android:id="@+id/textView32"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="T# 23" />
+
+        <TextView
+            android:id="@+id/textView3222"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ddswewgfwegjkjgwe wegwegwe" />
+
+        <TextView
+            android:id="@+id/textView222"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="laps" />
+    </TableRow>-->
+
+</TableLayout>

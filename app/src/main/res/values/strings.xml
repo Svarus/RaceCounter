@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">RaceCounter</string>
+    <string name="app.shortName">RC</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="tabStartList">Start List</string>
+    <string name="tabDataCenter">Data Center</string>
+    <string name="tabRaceField">Race Field</string>
+
+    <string name="startlist.add.racer">Add Racer</string>
+    <string name="startlist.save.start.list">Save Start List</string>
+    <string name="startlist.save.results.list">Save Results of Race</string>
+    <string name="startlist.load.start.list">Load Start List</string>
+
+    <string name="datacenter.start.race">Start Race</string>
+    <string name="datacenter.quick.save">Quick save</string>
+    <string name="datacenter.save.results">Save results to file</string>
+
+    <string name="file.start.list.open">NewData.json</string>
+    <!--<string name="file.start.list.save">StartListSaved.json</string>-->
+    <string name="file.start.list.save">NewData.json</string>
+    <string name="file.results.save">Results.json</string>
+
+    <string name="dialog.add.racer.id">ID</string>
+    <string name="dialog.add.racer.surname">Surname</string>
+    <string name="dialog.add.racer.name">Name</string>
+    <string name="dialog.add.racer.bt.add">Add</string>
+    <string name="dialog.add.racer.bt.cancel">Cancel</string>
+    <string name="dialog.change.racer.bt.change">Change</string>
+    <string name="dialog.change.racer.bt.delete">Delete</string>
+
+    <string name="racer_to_string">ID: %1$d | %2$dh %3$dm %4$d,%5$ds</string>
+    <string name="racer_time">ID: %1$d | %2$dh %3$dm %4$d,%5$ds</string>
+    <string name="finish.position.label">#</string>
+    <string name="finish.id.label">ID</string>
+    <string name="finish.name.label">Racer Name</string>
+    <string name="finish.laps.label">Laps</string>
+    <string name="finish.time.label">Time</string>
+    <string name="finish.lapN.label">Lap</string>
+    <string name="button.restart">Race restart</string>
+    <string name="button.clear.race">Race results clear</string>
+
+    <string name="toast.race.was.started">Race was started!</string>
+    <string name="toast.race.was.already.started">Race was already started!</string>
+    <string name="toast.add.racer">Please add at least one racer to the Start List!</string>
+    <string name="toast.results.saved">Results saved</string>
+
+    <string name="dialog.restart.race">Are you sure you want to clear race results?</string>
+    <string name="dialog.yes">Yes</string>
+    <string name="dialog.no">No</string>
+    <string name="start.list.loaded">Start list loaded</string>
+    <string name="start.list.saved">Start list saved</string>
+    <string name="button.clear.start.list">Clear Start List</string>
+    <string name="dialog.load.data">Loading data...</string>
+    <string name="dialog_save_data">Saving to file</string>
+</resources>
+

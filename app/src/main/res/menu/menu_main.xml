@@ -1,0 +1,53 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.win.racecounter.activities.MainActivity">
+
+    <item
+        android:id="@+id/action_add_racer"
+        android:orderInCategory="100"
+        android:title="@string/startlist.add.racer"
+        app:showAsAction="never" />
+    />
+    <item
+        android:id="@+id/action_load_start_list"
+        android:orderInCategory="101"
+        android:title="@string/startlist.load.start.list"
+        app:showAsAction="never" />
+    />
+    <item
+        android:id="@+id/action_save_start_list"
+        android:orderInCategory="102"
+        android:title="@string/startlist.save.start.list"
+        app:showAsAction="never" />
+    />
+    <item
+        android:id="@+id/action_save_results"
+        android:orderInCategory="201"
+        android:title="@string/startlist.save.results.list"
+        app:showAsAction="never" />
+    />
+    <item
+        android:id="@+id/action_clear_start_list"
+        android:orderInCategory="300"
+        android:title="@string/button.clear.start.list"
+        app:showAsAction="never" />
+    />
+    <item
+        android:id="@+id/action_start_race"
+        android:orderInCategory="500"
+        android:title="@string/datacenter.start.race"
+        app:showAsAction="never" />
+    />
+    <item
+        android:id="@+id/action_clear_race"
+        android:orderInCategory="301"
+        android:title="@string/button.clear.race"
+        app:showAsAction="never" />
+        />
+<!--    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="700"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />-->
+</menu>
