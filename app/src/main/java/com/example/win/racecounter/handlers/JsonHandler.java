@@ -25,7 +25,7 @@ public class JsonHandler {
         writer.close();
     }
 
-    public void writeRacersArray(JsonWriter writer, List<Racer> racers) throws IOException {
+    private void writeRacersArray(JsonWriter writer, List<Racer> racers) throws IOException {
         writer.beginArray();
         for (Racer racer : racers) {
             writeRacer(writer, racer);
@@ -33,7 +33,7 @@ public class JsonHandler {
         writer.endArray();
     }
 
-    public void writeRacer(JsonWriter writer, Racer racer) throws IOException {
+    private void writeRacer(JsonWriter writer, Racer racer) throws IOException {
         writer.beginObject();
         writer.name("id").value(racer.getId());
         writer.name("surname").value(racer.getSurname());
@@ -54,7 +54,7 @@ public class JsonHandler {
         writer.endObject();
     }
 
-    public void writeLongsArray(JsonWriter writer, List<Long> longs) throws IOException {
+    private void writeLongsArray(JsonWriter writer, List<Long> longs) throws IOException {
         writer.beginArray();
         for (Long value : longs) {
             writer.value(value);
@@ -71,8 +71,8 @@ public class JsonHandler {
         }
     }
 
-    public ArrayList<Racer> readRacersArray(JsonReader reader) throws IOException {
-        ArrayList<Racer> messages = new ArrayList<Racer>();
+    private ArrayList<Racer> readRacersArray(JsonReader reader) throws IOException {
+        ArrayList<Racer> messages = new ArrayList<>();
 
         reader.beginArray();
         while (reader.hasNext()) {
@@ -82,7 +82,7 @@ public class JsonHandler {
         return messages;
     }
 
-    public Racer readRacer(JsonReader reader) throws IOException {
+    private Racer readRacer(JsonReader reader) throws IOException {
         int id = -1;
         String surname = "";
         String name = "";
@@ -92,7 +92,7 @@ public class JsonHandler {
         int placeInCategory = 0;
         Racer racer = null;
         //ArrayList<Long> lapN = null;
-        ArrayList<Long> lapN = new ArrayList<Long>();
+        ArrayList<Long> lapN = new ArrayList<>();
 
         reader.beginObject();
         while (reader.hasNext()) {
@@ -122,8 +122,8 @@ public class JsonHandler {
         return new Racer(id, surname, name, currentTime, laps, lapN);
     }
 
-    public ArrayList<Long> readLongsArray(JsonReader reader) throws IOException {
-        ArrayList<Long> longs = new ArrayList<Long>();
+    private ArrayList<Long> readLongsArray(JsonReader reader) throws IOException {
+        ArrayList<Long> longs = new ArrayList<>();
 
         reader.beginArray();
         while (reader.hasNext()) {
