@@ -13,11 +13,12 @@ public class DialogClearStartList extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setMessage("Are you sure you want to clear start list?")
+        builder.setMessage(R.string.dialog_clear_start_list)
                 .setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         MainActivity.arrayOfRacers.clear();
                         MainActivity.arrayOfRacersProtocol.clear();
+                        MainActivity.arrayOfRacersSorted.clear();
                         MainActivity.notifyAllAdapters();
                     }
                 })

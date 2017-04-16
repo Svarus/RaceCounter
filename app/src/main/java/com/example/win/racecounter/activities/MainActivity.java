@@ -246,8 +246,11 @@ public class MainActivity extends AppCompatActivity {
         racersAdapterGv.notifyDataSetChanged();
         protocolAdapter.notifyDataSetChanged();
         //check if user already switched to Results tab (Data center) and instance of table is created
-        if (tableContext!= null && tableView!= null){
+        if (tableContext!= null){
+            arrayOfRacersSorted.clear();
+            arrayOfRacersSorted = new ArrayList<>(arrayOfRacers);
             RacersHandler.PopulateRacersToTable(tableContext, tableView, arrayOfRacersSorted);
+            Log.v("MAIN_ACTIVITY", "Notify all adapters -> populate racers func");
         }
     }
 
