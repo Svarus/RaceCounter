@@ -198,8 +198,13 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_start_race:
                 if (!raceWasStarted && startRace()){
-                    tickStart = elapsedRealtime();
-                    startChronometer();
+                    if (tickStart == 0){
+                        tickStart = elapsedRealtime();
+                        startChronometer();
+                    } else {
+                        chronometer.setVisibility(View.VISIBLE);
+                    }
+
                     Vibrator v = (Vibrator) getApplication().getSystemService(Context.VIBRATOR_SERVICE);
                     v.vibrate(50);
                     Log.v("MAIN_ACTIVITY", "MainActivity tickStart STARTED");
@@ -219,6 +224,14 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), R.string.toast_add_racer, Toast.LENGTH_LONG).show();
                     }
                 }
+                return true;
+            case R.id.action_stop_race:
+                Vibrator v = (Vibrator) getApplication().getSystemService(Context.VIBRATOR_SERVICE);
+                v.vibrate(50);
+                chronometer.setVisibility(View.INVISIBLE);
+                raceWasStarted = false;
+                racersAdapterGv.notifyDataSetChanged();
+
                 return true;
 /*            case R.id.action_settings:
                 return true;*/

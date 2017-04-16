@@ -54,5 +54,6 @@
     <string name="dialog.load.data">Loading data...</string>
     <string name="dialog_save_data">Saving to file...</string>
     <string name="dialog.clear.start.list">Are you sure you want to clear start list?</string>
+    <string name="datacenter.stop.race">Stop Race</string>
 </resources>
 

@@ -39,4 +39,5 @@
     <string name="toast.race.was.started">Змагання розпочались!</string>
     <string name="toast.results.saved">Результати збережено</string>
     <string name="dialog.clear.start.list">Стартовий список буде очищено, ви впевнені?</string>
+    <string name="datacenter.stop.race">Зупинити змагання</string>
 </resources>

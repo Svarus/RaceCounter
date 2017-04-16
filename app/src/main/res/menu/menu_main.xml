@@ -8,43 +8,49 @@
         android:orderInCategory="100"
         android:title="@string/startlist.add.racer"
         app:showAsAction="never" />
-    />
+
     <item
         android:id="@+id/action_load_start_list"
         android:orderInCategory="101"
         android:title="@string/startlist.load.start.list"
         app:showAsAction="never" />
-    />
+
     <item
         android:id="@+id/action_save_start_list"
         android:orderInCategory="102"
         android:title="@string/startlist.save.start.list"
         app:showAsAction="never" />
-    />
+
     <item
         android:id="@+id/action_save_results"
         android:orderInCategory="201"
         android:title="@string/startlist.save.results.list"
         app:showAsAction="never" />
-    />
+
     <item
         android:id="@+id/action_clear_start_list"
         android:orderInCategory="300"
         android:title="@string/button.clear.start.list"
         app:showAsAction="never" />
-    />
-    <item
-        android:id="@+id/action_start_race"
-        android:orderInCategory="500"
-        android:title="@string/datacenter.start.race"
-        app:showAsAction="never" />
-    />
+
     <item
         android:id="@+id/action_clear_race"
         android:orderInCategory="301"
         android:title="@string/button.clear.race"
         app:showAsAction="never" />
-        />
+
+    <item
+        android:id="@+id/action_start_race"
+        android:orderInCategory="501"
+        android:title="@string/datacenter.start.race"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_stop_race"
+        android:orderInCategory="500"
+        android:title="@string/datacenter.stop.race"
+        app:showAsAction="never" />
+
 <!--    <item
         android:id="@+id/action_settings"
         android:orderInCategory="700"
