@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import com.example.win.racecounter.R;
 import com.example.win.racecounter.activities.MainActivity;
 
+//PLEASE NOTE currently doesn't using! See ProtocolAdapter instead
 public class DialogDeleteRacerLap  extends DialogFragment {
     @Override
     public Dialog onCreateDialog(final Bundle savedInstanceState) {
