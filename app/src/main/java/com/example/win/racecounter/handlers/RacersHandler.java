@@ -130,140 +130,142 @@ public class RacersHandler {
         //clear table contents   TODO optimization to reuse existing table rows
         tlFinishTable.removeAllViews();
 
-        //sort according to racer postition
-        Collections.sort(arrayOfRacersSorted, new TRC());
+        if (!arrayOfRacersSorted.isEmpty()) {
+            //sort according to racer postition
+            Collections.sort(arrayOfRacersSorted, new TRC());
 
-        View horizontalDivider = new View(context);
-        horizontalDivider.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, 1));
-        horizontalDivider.setBackgroundColor(Color.rgb(51, 51, 51));
+            View horizontalDivider = new View(context);
+            horizontalDivider.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, 1));
+            horizontalDivider.setBackgroundColor(Color.rgb(51, 51, 51));
 
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT);
+            ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, TableLayout.LayoutParams.WRAP_CONTENT);
 
-        TableRow tableRow = new TableRow(context);
-        Typeface tf = Typeface.DEFAULT_BOLD;
+            TableRow tableRow = new TableRow(context);
+            Typeface tf = Typeface.DEFAULT_BOLD;
 
-        TextView tvPos = new TextView(context);
-        tvPos.setGravity(Gravity.RIGHT);
-        tvPos.setText(R.string.finish_position_label);
-        tvPos.setTypeface(tf);
-        tvPos.setPadding(10,0,10,0);
-        tableRow.addView(tvPos);
-        tableRow.addView(drawVericalLine(context, view));
-
-        TextView tvId = new TextView(context);
-        tvId.setGravity(Gravity.RIGHT);
-        tvId.setText(R.string.finish_id_label);
-        tvId.setTypeface(tf);
-        tvId.setPadding(10,0,10,0);
-        tableRow.addView(tvId);
-        tableRow.addView(drawVericalLine(context, view));
-
-        TextView tvName = new TextView(context);
-        tvName.setText(R.string.finish_name_label);
-        tvName.setTypeface(tf);
-        tvName.setGravity(Gravity.LEFT);
-        tvName.setPadding(10,0,10,0);
-        tableRow.addView(tvName);
-        tableRow.addView(drawVericalLine(context, view));
-
-        TextView tvLaps = new TextView(context);
-        tvLaps.setText(R.string.finish_laps_label);
-        tvLaps.setTypeface(tf);
-        tvLaps.setGravity(Gravity.CENTER_HORIZONTAL);
-        tvLaps.setPadding(10,0,10,0);
-        tableRow.addView(tvLaps);
-        tableRow.addView(drawVericalLine(context, view));
-
-        TextView tvTime = new TextView(context);
-        tvTime.setText(R.string.finish_time_label);
-        tvTime.setTypeface(tf);
-        tvTime.setGravity(Gravity.CENTER_HORIZONTAL);
-        tvTime.setPadding(10,0,10,0);
-        tableRow.addView(tvTime);
-        tableRow.addView(drawVericalLine(context, view));
-
-        //adding lapsN
-        int maxLaps = 0;
-        for(Racer racer: arrayOfRacersSorted){
-            maxLaps = racer.getLaps() > maxLaps ? racer.getLaps() : maxLaps;
-        }
-        for (int lap = 1; lap <= maxLaps; lap++){
-
-            tvTime = new TextView(context);
-            tvTime.setText(context.getString(R.string.finish_lapN_label) + String.valueOf(lap));
-            tvTime.setTypeface(tf);
-            tvTime.setGravity(Gravity.CENTER_HORIZONTAL);
-            tvTime.setPadding(10,0,10,0);
-            tableRow.addView(tvTime);
-            tableRow.addView(drawVericalLine(context, view));
-        }
-
-        tlFinishTable.addView(tableRow);
-        tlFinishTable.addView(horizontalDivider);
-
-        int position = 1;
-        for (Racer racer: arrayOfRacersSorted){
-
-            tableRow = new TableRow(context);
-
-            tvPos = new TextView(context);
+            TextView tvPos = new TextView(context);
             tvPos.setGravity(Gravity.RIGHT);
-            tvPos.setText(String.valueOf(position));
-            tvPos.setPadding(10,0,10,0);
+            tvPos.setText(R.string.finish_position_label);
+            tvPos.setTypeface(tf);
+            tvPos.setPadding(10, 0, 10, 0);
             tableRow.addView(tvPos);
             tableRow.addView(drawVericalLine(context, view));
 
-            tvId = new TextView(context);
+            TextView tvId = new TextView(context);
             tvId.setGravity(Gravity.RIGHT);
-            tvId.setText(String.valueOf(racer.getId()));
-            tvId.setPadding(10,0,10,0);
+            tvId.setText(R.string.finish_id_label);
+            tvId.setTypeface(tf);
+            tvId.setPadding(10, 0, 10, 0);
             tableRow.addView(tvId);
             tableRow.addView(drawVericalLine(context, view));
 
-            tvName = new TextView(context);
-            tvName.setText(racer.getSurname() + " " + racer.getName());
-            //tvName.setTypeface(Typeface.SERIF, Typeface.BOLD);
+            TextView tvName = new TextView(context);
+            tvName.setText(R.string.finish_name_label);
+            tvName.setTypeface(tf);
             tvName.setGravity(Gravity.LEFT);
-            tvName.setPadding(10,0,10,0);
+            tvName.setPadding(10, 0, 10, 0);
             tableRow.addView(tvName);
             tableRow.addView(drawVericalLine(context, view));
 
-            tvLaps = new TextView(context);
-            int laps = racer.getLaps();
-            String lapsString = laps > 0 ? String.valueOf(laps) : "";
-            tvLaps.setText(lapsString);
+            TextView tvLaps = new TextView(context);
+            tvLaps.setText(R.string.finish_laps_label);
+            tvLaps.setTypeface(tf);
             tvLaps.setGravity(Gravity.CENTER_HORIZONTAL);
-            tvLaps.setPadding(10,0,10,0);
+            tvLaps.setPadding(10, 0, 10, 0);
             tableRow.addView(tvLaps);
             tableRow.addView(drawVericalLine(context, view));
 
-            tvTime = new TextView(context);
-            long time = racer.getTime();
-            SpannableString timeString = time > 0 ? new TimeHelper(time).toStringSpannable() : new SpannableString("");
-            //tvTime.setText(new TimeHelper(racer.getTime()).toStringSpannable());
-            tvTime.setText(timeString);
-            tvTime.setGravity(Gravity.RIGHT);
-            tvTime.setPadding(10,0,10,0);
+            TextView tvTime = new TextView(context);
+            tvTime.setText(R.string.finish_time_label);
+            tvTime.setTypeface(tf);
+            tvTime.setGravity(Gravity.CENTER_HORIZONTAL);
+            tvTime.setPadding(10, 0, 10, 0);
             tableRow.addView(tvTime);
             tableRow.addView(drawVericalLine(context, view));
 
-            for (int lap = 0; lap < racer.getLaps(); lap++){
+            //adding lapsN
+            int maxLaps = 0;
+            for (Racer racer : arrayOfRacersSorted) {
+                maxLaps = racer.getLaps() > maxLaps ? racer.getLaps() : maxLaps;
+            }
+            for (int lap = 1; lap <= maxLaps; lap++) {
 
                 tvTime = new TextView(context);
-                tvTime.setText(new TimeHelper(racer.getLapN().get(lap)).toStringSpannable());
-                tvTime.setGravity(Gravity.RIGHT);
-                tvTime.setPadding(10,0,10,0);
+                tvTime.setText(context.getString(R.string.finish_lapN_label) + String.valueOf(lap));
+                tvTime.setTypeface(tf);
+                tvTime.setGravity(Gravity.CENTER_HORIZONTAL);
+                tvTime.setPadding(10, 0, 10, 0);
                 tableRow.addView(tvTime);
                 tableRow.addView(drawVericalLine(context, view));
             }
 
             tlFinishTable.addView(tableRow);
-            ++position;
-
-            horizontalDivider = new View(context);
-            horizontalDivider.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, 1));
-            horizontalDivider.setBackgroundColor(Color.rgb(51, 51, 51));
             tlFinishTable.addView(horizontalDivider);
+
+            int position = 1;
+            for (Racer racer : arrayOfRacersSorted) {
+
+                tableRow = new TableRow(context);
+
+                tvPos = new TextView(context);
+                tvPos.setGravity(Gravity.RIGHT);
+                tvPos.setText(String.valueOf(position));
+                tvPos.setPadding(10, 0, 10, 0);
+                tableRow.addView(tvPos);
+                tableRow.addView(drawVericalLine(context, view));
+
+                tvId = new TextView(context);
+                tvId.setGravity(Gravity.RIGHT);
+                tvId.setText(String.valueOf(racer.getId()));
+                tvId.setPadding(10, 0, 10, 0);
+                tableRow.addView(tvId);
+                tableRow.addView(drawVericalLine(context, view));
+
+                tvName = new TextView(context);
+                tvName.setText(racer.getSurname() + " " + racer.getName());
+                //tvName.setTypeface(Typeface.SERIF, Typeface.BOLD);
+                tvName.setGravity(Gravity.LEFT);
+                tvName.setPadding(10, 0, 10, 0);
+                tableRow.addView(tvName);
+                tableRow.addView(drawVericalLine(context, view));
+
+                tvLaps = new TextView(context);
+                int laps = racer.getLaps();
+                String lapsString = laps > 0 ? String.valueOf(laps) : "";
+                tvLaps.setText(lapsString);
+                tvLaps.setGravity(Gravity.CENTER_HORIZONTAL);
+                tvLaps.setPadding(10, 0, 10, 0);
+                tableRow.addView(tvLaps);
+                tableRow.addView(drawVericalLine(context, view));
+
+                tvTime = new TextView(context);
+                long time = racer.getTime();
+                SpannableString timeString = time > 0 ? new TimeHelper(time).toStringSpannable() : new SpannableString("");
+                //tvTime.setText(new TimeHelper(racer.getTime()).toStringSpannable());
+                tvTime.setText(timeString);
+                tvTime.setGravity(Gravity.RIGHT);
+                tvTime.setPadding(10, 0, 10, 0);
+                tableRow.addView(tvTime);
+                tableRow.addView(drawVericalLine(context, view));
+
+                for (int lap = 0; lap < racer.getLaps(); lap++) {
+
+                    tvTime = new TextView(context);
+                    tvTime.setText(new TimeHelper(racer.getLapN().get(lap)).toStringSpannable());
+                    tvTime.setGravity(Gravity.RIGHT);
+                    tvTime.setPadding(10, 0, 10, 0);
+                    tableRow.addView(tvTime);
+                    tableRow.addView(drawVericalLine(context, view));
+                }
+
+                tlFinishTable.addView(tableRow);
+                ++position;
+
+                horizontalDivider = new View(context);
+                horizontalDivider.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, 1));
+                horizontalDivider.setBackgroundColor(Color.rgb(51, 51, 51));
+                tlFinishTable.addView(horizontalDivider);
+            }
         }
     }
 
