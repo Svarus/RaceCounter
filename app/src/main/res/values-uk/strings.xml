@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RaceCounter</string>
+    <string name="action_settings">Налаштування</string>
+    <string name="app.shortName">RC</string>
+    <string name="button.clear.race">Очистити результати</string>
+    <string name="button.clear.start.list">Очистити стартовий протокол</string>
+    <string name="button.restart">Перезапуск змагань</string>
+    <string name="datacenter.quick.save">Швидке зберігання</string>
+    <string name="datacenter.save.results">Зберегти результати у файл</string>
+    <string name="datacenter.start.race">Стартувати змагання</string>
+    <string name="dialog.add.racer.bt.add">Додати</string>
+    <string name="dialog.add.racer.bt.cancel">Відміна</string>
+    <string name="dialog.add.racer.id">ID</string>
+    <string name="dialog.add.racer.name">Ім\'я</string>
+    <string name="dialog.add.racer.surname">Прізвище</string>
+    <string name="dialog.change.racer.bt.change">Змінити</string>
+    <string name="dialog.change.racer.bt.delete">Видалити</string>
+    <string name="dialog.load.data">Завантаження даних...</string>
+    <string name="dialog.no">Ні</string>
+    <string name="dialog.restart.race">Всі результати змагань буде видалено. Ви впевнені?</string>
+    <string name="dialog.yes">Так</string>
+    <string name="dialog_save_data">Зберігання до файлу...</string>
+    <string name="finish.lapN.label">Коло</string>
+    <string name="finish.laps.label">Кіл</string>
+    <string name="finish.name.label">Ім\'я учасника</string>
+    <string name="finish.time.label">Час</string>
+    <string name="start.list.loaded">Стартовий список завантажено</string>
+    <string name="start.list.saved">Стартовий список збережено</string>
+    <string name="startlist.add.racer">Додати учасника</string>
+    <string name="startlist.load.start.list">Завантажити стартовий список з файлу</string>
+    <string name="startlist.save.start.list">Зберегти стартовий список</string>
+    <string name="startlist.save.results.list">Зберегти Результати змагань</string>
+    <string name="tabDataCenter">Фінішний протокол</string>
+    <string name="tabRaceField">Поле учасників</string>
+    <string name="tabStartList">Стартовий список</string>
+    <string name="toast.add.racer">Будь ласка додайте хоча б одного учасника у стартовий список</string>
+    <string name="toast.race.was.already.started">Змагання уже в процесі!</string>
+    <string name="toast.race.was.started">Змагання розпочались!</string>
+    <string name="toast.results.saved">Результати збережено</string>
+    <string name="dialog.clear.start.list">Стартовий список буде очищено, ви впевнені?</string>
+</resources>
