@@ -35,7 +35,13 @@ public class DialogAddRacer extends DialogFragment{
                         EditText etSurname = (EditText) rootView.findViewById(R.id.etSurname);
                         EditText etName = (EditText) rootView.findViewById(R.id.etName);
 
-                        int racerId = Integer.parseInt(etId.getText().toString());
+                        int racerId;
+                        try {
+                            racerId = Integer.parseInt(etId.getText().toString());
+                        } catch (Exception e){
+                            racerId = 0;    //TODO dialog check for correct data
+                        }
+
                         String surName = etSurname.getText().toString();
                         String name = etName.getText().toString();
 
