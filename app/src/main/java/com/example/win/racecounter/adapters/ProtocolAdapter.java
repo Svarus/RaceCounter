@@ -70,7 +70,7 @@ public class ProtocolAdapter extends ArrayAdapter<RacerProtocol> {
                 v.vibrate(50);
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-                builder.setMessage("Delete racer " + racerProtocol.toString() + "?")
+                builder.setMessage(getContext().getString(R.string.dialog_delete_racer_lap) + racerProtocol.toString() + "?")
                         .setPositiveButton(R.string.dialog_yes, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 //Operate with arrayOfRacers - delete lap
