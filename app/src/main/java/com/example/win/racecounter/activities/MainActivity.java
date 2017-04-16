@@ -160,12 +160,6 @@ public class MainActivity extends AppCompatActivity {
             case R.id.action_load_start_list:
                 if (!raceWasStarted) {
                     String fileName = getString(R.string.file_start_list_open);
-                    /*
-                    arrayOfRacers.clear();
-                    arrayOfRacers.addAll(FilesHandler.readJsonFile(fileName));
-                    arrayOfRacersProtocol.clear(); //TODO add loaded items to the protocol
-                    notifyAllAdapters();
-                    Toast.makeText(getApplicationContext(), R.string.start_list_loaded, Toast.LENGTH_LONG).show();*/
                     new ReadFileTask(MainActivity.this).execute(fileName);
                 }
                 else
@@ -175,15 +169,11 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_save_start_list:
                 String fileNameSave = getString(R.string.file_start_list_save);
-                /*FilesHandler.saveJsonFile(fileNameSave, arrayOfRacers, false);
-                Toast.makeText(getApplicationContext(), R.string.start_list_saved, Toast.LENGTH_LONG).show();*/
                 new SaveFileTask(MainActivity.this).execute(fileNameSave, arrayOfRacers, false);
 
                 return true;
             case R.id.action_save_results:
                 String fileNameSaveResults = getString(R.string.file_results_save);
-                /*FilesHandler.saveJsonFile(fileNameSaveResults, arrayOfRacers, true);
-                Toast.makeText(getApplicationContext(), R.string.toast_results_saved, Toast.LENGTH_LONG).show();*/
                 new SaveFileTask(MainActivity.this).execute(fileNameSaveResults, arrayOfRacers, true);
 
                 return true;
