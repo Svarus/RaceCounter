@@ -127,6 +127,12 @@ public class RacersHandler {
     public static void PopulateRacersToTable(Context context, View view, ArrayList<Racer> arrayOfRacersSorted){
         TableLayout tlFinishTable = (TableLayout) view.findViewById(R.id.tlFinishTable);
 
+        //clear table contents   TODO optimization to reuse existing table rows
+        tlFinishTable.removeAllViews();
+
+        //sort according to racer postition
+        Collections.sort(arrayOfRacersSorted, new TRC());
+
         View horizontalDivider = new View(context);
         horizontalDivider.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, 1));
         horizontalDivider.setBackgroundColor(Color.rgb(51, 51, 51));

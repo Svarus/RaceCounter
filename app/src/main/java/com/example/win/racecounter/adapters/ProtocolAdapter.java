@@ -22,10 +22,12 @@ import com.example.win.racecounter.R;
 import com.example.win.racecounter.activities.MainActivity;
 import com.example.win.racecounter.handlers.DialogDeleteRacerLap;
 import com.example.win.racecounter.handlers.RacersHandler;
+import com.example.win.racecounter.handlers.TRC;
 import com.example.win.racecounter.models.Racer;
 import com.example.win.racecounter.models.RacerProtocol;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ProtocolAdapter extends ArrayAdapter<RacerProtocol> {
     private static final int POWER = 9;
@@ -103,6 +105,8 @@ public class ProtocolAdapter extends ArrayAdapter<RacerProtocol> {
 
                                         MainActivity.protocolAdapter.notifyDataSetChanged();
                                         MainActivity.racersAdapterGv.notifyDataSetChanged();
+                                        RacersHandler.PopulateRacersToTable(getContext(), MainActivity.tableView, MainActivity.arrayOfRacersSorted);
+
                                         break;
                                     }
                                 }

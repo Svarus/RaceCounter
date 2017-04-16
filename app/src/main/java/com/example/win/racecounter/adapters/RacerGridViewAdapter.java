@@ -13,9 +13,11 @@ import android.widget.Button;
 import com.example.win.racecounter.R;
 import com.example.win.racecounter.activities.MainActivity;
 import com.example.win.racecounter.handlers.RacersHandler;
+import com.example.win.racecounter.handlers.TRC;
 import com.example.win.racecounter.models.Racer;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class RacerGridViewAdapter extends ArrayAdapter<Racer> {
     public RacerGridViewAdapter(Context context, ArrayList<Racer> racers) {
@@ -60,6 +62,9 @@ public class RacerGridViewAdapter extends ArrayAdapter<Racer> {
                 v.vibrate(50);
                 RacersHandler.racerPassedFinishLine(racer);
                 btButton.setText(RacersHandler.spanInfoRacer(racer));
+
+                Collections.sort(MainActivity.arrayOfRacersSorted, new TRC());
+                RacersHandler.PopulateRacersToTable(getContext(), MainActivity.tableView, MainActivity.arrayOfRacersSorted);
 
             }
 

@@ -1,6 +1,8 @@
 package com.example.win.racecounter.activities;
 
+import android.app.Application;
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.os.Vibrator;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -71,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
 
     private static Chronometer chronometer;
     private static long timeChStart;
+
+    public static View tableView;
+    private static Context tableContext;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -240,6 +245,10 @@ public class MainActivity extends AppCompatActivity {
         startListAdapter.notifyDataSetChanged();
         racersAdapterGv.notifyDataSetChanged();
         protocolAdapter.notifyDataSetChanged();
+        //check if user already switched to Results tab (Data center) and instance of table is created
+        if (tableContext!= null && tableView!= null){
+            RacersHandler.PopulateRacersToTable(tableContext, tableView, arrayOfRacersSorted);
+        }
     }
 
     public static void restartRace() {
@@ -331,9 +340,10 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("MAIN_ACTIVITY", "Case 3");
 
                     rootView = inflater.inflate(R.layout.racer_finish_table, container, false);
+                    tableView = rootView;
+                    tableContext = getContext();
 
                     arrayOfRacersSorted = new ArrayList<>(arrayOfRacers);
-                    Collections.sort(arrayOfRacersSorted, new TRC());
                     RacersHandler.PopulateRacersToTable(getContext(), rootView, arrayOfRacersSorted);
 
                     break;
