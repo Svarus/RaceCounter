@@ -173,9 +173,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return true;
             case R.id.action_save_start_list:
-                String fileNameSave = getString(R.string.file_start_list_save);
-                new SaveFileTask(MainActivity.this).execute(fileNameSave, arrayOfRacers, false);
-
+                if (!arrayOfRacers.isEmpty()) {
+                    String fileNameSave = getString(R.string.file_start_list_save);
+                    new SaveFileTask(MainActivity.this).execute(fileNameSave, arrayOfRacers, false);
+                }
                 return true;
             case R.id.action_save_results:
                 String fileNameSaveResults = getString(R.string.file_results_save);
