@@ -30,6 +30,7 @@ import android.widget.Toast;
 
 import com.example.win.racecounter.adapters.ProtocolAdapter;
 import com.example.win.racecounter.adapters.RacerListViewFinishAdapter;
+import com.example.win.racecounter.api.WebClient;
 import com.example.win.racecounter.handlers.DialogAddRacer;
 import com.example.win.racecounter.R;
 import com.example.win.racecounter.handlers.DialogChangeRacer;
@@ -180,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_save_results:
                 String fileNameSaveResults = getString(R.string.file_results_save);
-                new SaveFileTask(MainActivity.this).execute(fileNameSaveResults, arrayOfRacers, true);
+                new SaveFileTask(MainActivity.this).execute(fileNameSaveResults, arrayOfRacersSorted, true);
 
                 return true;
             case R.id.action_clear_start_list:
@@ -234,6 +235,11 @@ public class MainActivity extends AppCompatActivity {
                 racersAdapterGv.notifyDataSetChanged();
 
                 return true;
+            case R.id.action_send_data_toserver:
+                String fileName = getString(R.string.file_results_save);
+                WebClient webClient = new WebClient(findViewById(R.id.container));
+                webClient.setData2Send(FilesHandler.readJsonFileToString(fileName));
+                webClient.post();
 /*            case R.id.action_settings:
                 return true;*/
             default:

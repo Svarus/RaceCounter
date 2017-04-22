@@ -51,6 +51,12 @@
         android:title="@string/datacenter.stop.race"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_send_data_toserver"
+        android:orderInCategory="505"
+        android:title="@string/datacenter.server.upload"
+        app:showAsAction="never" />
+
 <!--    <item
         android:id="@+id/action_settings"
         android:orderInCategory="700"

@@ -41,4 +41,5 @@
     <string name="dialog.clear.start.list">Стартовий список буде очищено, ви впевнені?</string>
     <string name="datacenter.stop.race">Зупинити змагання</string>
     <string name="dialog.delete.racer.lap">"Видалити учасника "</string>
+    <string name="datacenter.server.upload">Завантажити на Сервер</string>
 </resources>
