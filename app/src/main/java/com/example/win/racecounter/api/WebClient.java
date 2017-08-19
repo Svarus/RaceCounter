@@ -6,7 +6,7 @@ import android.widget.TextView;
 import com.example.win.racecounter.R;
 
 public class WebClient implements GetDataFromServer.AsyncResponseReceive, PostDataToServer.AsyncResponseSend {
-    private static final String BASE_URL = "http://185.16.127.20:8181/RaceServer/api/";
+    private static final String BASE_URL = "http://178.74.221.98:8181/RaceServer/api/";
     private static final String GET_URL = "read";
     private static final String POST_URL = "raceService";
     private static String data2Send = "empty data";
