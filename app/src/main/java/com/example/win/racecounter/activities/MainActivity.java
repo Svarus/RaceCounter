@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
     private static long tickNow;
     private static long timeDifference;
     public static boolean raceWasStarted = false;
+    public static boolean raceWasStopped = false;
 
     private static Chronometer chronometer;
     private static long timeChStart;
@@ -201,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.action_start_race:
                 if (!raceWasStarted && startRace()){
-                    if (tickStart == 0){
+                    if (!raceWasStopped){
                         tickStart = elapsedRealtime();
                         startChronometer();
                     } else {
@@ -229,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return true;
             case R.id.action_stop_race:
+                raceWasStopped = true;
                 Vibrator v = (Vibrator) getApplication().getSystemService(Context.VIBRATOR_SERVICE);
                 v.vibrate(50);
                 chronometer.setVisibility(View.INVISIBLE);
@@ -277,6 +279,7 @@ public class MainActivity extends AppCompatActivity {
 
     public static void restartRace() {
         raceWasStarted = false;
+        raceWasStopped = false;
         RacersHandler.restartRace();
 
         stopChronometer();
