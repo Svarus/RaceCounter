@@ -133,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
         chronometer.setBase(timeChStart);
         if (raceWasStarted){
             chronometer.start();
+            chronometer.setVisibility(View.VISIBLE);
         }
     }
 
