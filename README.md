@@ -19,4 +19,6 @@ Demo screenshots
 <img src="http://i.piccy.info/i9/879999e654d8abd4c50b59e98b36f2f7/1503038245/60257/1172113/06_Race_in_progress.jpg"></img></li>
 <li>Race results view:
 <img src="http://i.piccy.info/i9/84f9702d214c168f42756351582828c0/1503038272/95510/1172113/07_Race_results.jpg"></img></li>
+<li>Example of online results translation via browser:
+<img src="http://i.piccy.info/i9/24fc3847334b073ef7a58cf826b29275/1504077753/54019/1175384/Online.png"></img></li>
 </ol>
